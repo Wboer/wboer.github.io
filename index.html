@@ -10,3 +10,13 @@
     hello World
 </body>
 </html>
+
+<script>
+const RSS_URL = `https://api.nevobo.nl/export/poule/regio-west/HPB/resultaten.rss`;
+
+fetch(RSS_URL)
+  .then(response => response.text())
+  .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+  .then(data => console.log(data))
+  
+ </script>
